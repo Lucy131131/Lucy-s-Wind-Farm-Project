@@ -15,13 +15,10 @@ Lx = 2000
 Lz = 2000
 nx = 32
 nz = 1000
-H = 5000
 h0 = 200
 k0 = 2*np.pi/Lx
-N0 = 0.055
 z0 = 100
 Ns = 0.01
-alpha = 10**-5
 
 x = np.linspace(0, Lx, nx, endpoint=False)
 z = np.linspace(0, Lz, nz)
@@ -33,7 +30,6 @@ Uhub = 5
 #U0 = Uwind + Uhub
 
 # Boundary 
-#h = h0*np.cos(k0*x) 
 def gaussian_wave(x, peaks, A=300, sigma= 140):
      h = np.zeros_like(x)
      for x0 in peaks:
@@ -41,7 +37,6 @@ def gaussian_wave(x, peaks, A=300, sigma= 140):
      return h 
 
 # Generate the terrain profile
-#peaks = [6000,6500,7000,7500,8000,8500,9000,9500,10000,10500,11000,11500,12000,12500,13000]
 peaks = [600,1000,1400]
 h = gaussian_wave(x, peaks)
 
